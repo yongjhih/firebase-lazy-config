@@ -2,8 +2,31 @@
 
 ## Usage
 
+Before:
+
+```java
+Boolean mForcedUpdateEnabled = null;
+
+public boolean forcedUpdateEnabled() {
+  if (mForcedUpdateEnabled == null) {
+    mForcedUpdateEnabled = FirebaseRemoteConfig.getInstance().getBoolean("forced_update_enabled");
+  }
+  return mForcedUpdateEnabled;
+}
+```
+
+Before:
+
 ```kotlin
-val forcedUpdateEnabled: Boolean by firebaseBool("forced_update_enabled")
+val forcedUpdateEnabled: Boolean by lazy {
+    FirebaseRemoteConfig.getInstance().getBoolean("forced_update_enabled")
+}
+```
+
+After:
+
+```kotlin
+val forcedUpdateEnabled by firebaseBool("forced_update_enabled")
 ```
 
 ## Installation
