@@ -46,8 +46,7 @@ repositories {
 }
 
 dependencies {
-    // compile 'com.github.yongjhih.firebase-lazyconfig:firebase-lazyconfig:0.0.1' comming
-    compile 'com.github.yongjhih.firebase-lazyconfig:firebase-lazyconfig-kotlin:0.0.1'
+    compile 'com.github.yongjhih:firebase-lazyconfig:0.0.1'
 }
 ```
 
