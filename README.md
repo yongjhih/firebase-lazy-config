@@ -26,7 +26,15 @@ val forcedUpdateEnabled: Boolean by lazy {
 After:
 
 ```kotlin
-val forcedUpdateEnabled by firebaseBool("forced_update_enabled")
+val forcedUpdateEnabled by firebaseBoolean("forced_update_enabled")
+```
+
+After:
+
+```java
+// TODO
+@FirebaseBoolean("forced_update_enabled")
+public boolean forcedUpdateEnabled;
 ```
 
 ## Installation
@@ -38,7 +46,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.yongjhih:firebase-lazyconfig:0.0.1'
+    // compile 'com.github.yongjhih.firebase-lazyconfig:firebase-lazyconfig:0.0.1' comming
+    compile 'com.github.yongjhih.firebase-lazyconfig:firebase-lazyconfig-kotlin:0.0.1'
 }
 ```
 

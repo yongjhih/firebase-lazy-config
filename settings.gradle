@@ -1,1 +1,2 @@
-include ':firebase-lazyconfig'
+//include ':firebase-lazyconfig'
+include ':firebase-lazyconfig-kotlin'

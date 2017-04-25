@@ -16,7 +16,7 @@ private fun doubleNotFound(id: String, desc: KProperty<*>): Nothing =
     notFound("Double", id, desc)
 private fun stringNotFound(id: String, desc: KProperty<*>): Nothing =
     notFound("String", id, desc)
-private fun boolNotFound(id: String, desc: KProperty<*>): Nothing =
+private fun booleanNotFound(id: String, desc: KProperty<*>): Nothing =
     notFound("Boolean", id, desc)
 private fun notFound(type:String, id: String, desc: KProperty<*>): Nothing =
     throw IllegalStateException("$type ID $id for '${desc.name}' not found.")
@@ -36,8 +36,8 @@ fun <T> firebaseDouble(id: String)
 fun <T> firebaseString(id: String)
     = Lazy { t: T, desc -> FirebaseRemoteConfig.getInstance().getString(id) ?: stringNotFound(id, desc) }
 
-fun <T> firebaseBool(id: String)
-    = Lazy { t: T, desc -> FirebaseRemoteConfig.getInstance().getBoolean(id) ?: boolNotFound(id, desc) }
+fun <T> firebaseBoolean(id: String)
+    = Lazy { t: T, desc -> FirebaseRemoteConfig.getInstance().getBoolean(id) ?: booleanNotFound(id, desc) }
 
 // Like Kotlin's lazy delegate but the initializer gets the target and metadata passed to it
 class Lazy<T, V>(private val initializer: (T, KProperty<*>) -> V) : ReadOnlyProperty<T, V> {
