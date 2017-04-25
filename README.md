@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.yongjhih.firebase-lazyconfig:firebase-lazyconfig:0.0.1'
+    compile 'com.github.yongjhih:firebase-lazyconfig:0.0.1'
 }
 ```
 
