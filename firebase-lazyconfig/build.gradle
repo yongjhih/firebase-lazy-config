@@ -1,0 +1,53 @@
+buildscript {
+  ext.kotlinVersion = '1.1.1'
+  ext.firebase_version = '10.2.1'
+
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'com.android.tools.build:gradle:2.3.1'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    classpath 'com.google.firebase:firebase-plugins:1.0.4'
+  }
+}
+
+repositories {
+  jcenter()
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+dependencies {
+  compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  compile "com.google.firebase:firebase-config:$firebase_version"
+
+  androidTestCompile "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
+}
+
+android {
+  compileSdkVersion 25
+  buildToolsVersion '25.0.2'
+
+  defaultConfig {
+    minSdkVersion 14
+    targetSdkVersion 25
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    androidTest.res.srcDirs = ['src/androidTest/res']
+  }
+}
